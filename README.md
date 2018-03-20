@@ -38,6 +38,21 @@ environment, edit the top of this file and run it.
 In Linux and Mac OSx you can use CRON to schedule this or if using Windows you
 could use Scheduler.
 
+Once the backup is complete review the contents of your `$backup_location` -
+you will find two directories:
+
+* ./latest - this is a mirror/clone of your source directory
+* ./snapshot - this is a snapshot of your latest directory, if you delete a file it will remain in here for 365 days by default
+
+If you change the backup source path (`$files_to_backup`) then then contents of
+`$backup_location` will be emptied and replaced with a new copy of
+`$files_to_backup`... However previously backed up files will remain in the
+snapshots directory in `$backup_location`.
+
+### Changing default file retention
+
+You can change the default **365 days** to retain backups by modifing the `./src/rsnapshot.conf`
+
 ## Built With
 
 * [Docker](https://www.docker.com/) - The app framework used
@@ -46,7 +61,9 @@ could use Scheduler.
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Please read [CONTRIBUTING.md](https://github.com/harrywebster/bash-backup/blob/master/CONTRIBUTING.md)
+for details on our code of conduct, and the process for submitting pull requests
+to us.
 
 ## Authors
 
