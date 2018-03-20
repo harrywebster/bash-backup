@@ -8,4 +8,6 @@ RUN ["mkdir", "/backup"]
 COPY src/backup.sh /backup/backup.sh
 COPY src/rsnapshot.conf /backup/rsnapshot.conf
 
+RUN ["chmod", "755", "/backup/backup.sh"]
+
 ENTRYPOINT /backup/backup.sh
