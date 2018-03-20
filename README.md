@@ -65,6 +65,10 @@ Please read [CONTRIBUTING.md](https://github.com/harrywebster/bash-backup/blob/m
 for details on our code of conduct, and the process for submitting pull requests
 to us.
 
+## Example
+
+![Windows example of implementation](gifs/windows.gif)
+
 ## Authors
 
 * **Harry Webster**
