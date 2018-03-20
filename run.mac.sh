@@ -18,4 +18,4 @@ docker run \
 	--mount type=bind,source=$backup_location,target=/backup/destination \
 	bash_backup:latest
 
-display notification "Your backup run is now complete - for details please refer to the terminal session." with title "BASH-backup"
+osascript -e 'display notification "Your backup run is now complete - for details please refer to the terminal session." with title "BASH-backup"'
