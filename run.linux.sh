@@ -14,7 +14,7 @@ if [ ! -f "$install_path/README.md" ]; then
 fi
 
 if [ ! -d "$files_to_backup" ]; then
-	echo The source (files to backup) directory cannot be found - $files_to_backup
+	echo The source \(files to backup\) directory cannot be found - $files_to_backup
 	exit
 fi
 
