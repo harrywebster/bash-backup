@@ -2,7 +2,7 @@
 
 echo `date '+%Y-%m-%d %H:%M:%S'` : Starting to mirror contents of source
 echo
-rsync -avzu --delete --ignore-existing --stats /backup/source/* /backup/destination/latest
+rsync -avzu --delete --stats /backup/source /backup/destination/latest/
 echo
 echo `date '+%Y-%m-%d %H:%M:%S'` : Finish mirroring
 
