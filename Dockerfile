@@ -5,7 +5,7 @@ RUN apt-get install -y openssh-server rsnapshot rsync
 
 RUN ["mkdir", "/backup"]
 
-COPY backup.sh /backup/backup.sh
-COPY rsnapshot.conf /backup/rsnapshot.conf
+COPY src/backup.sh /backup/backup.sh
+COPY src/rsnapshot.conf /backup/rsnapshot.conf
 
 ENTRYPOINT /backup/backup.sh
