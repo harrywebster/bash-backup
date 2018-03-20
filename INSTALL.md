@@ -40,9 +40,8 @@ docker run \
 
 ## Apple Mac OSx
 
-After cloning this repo please change all the vaules that are relevant in `~/config.json` then correct permissions and symbolic link to the /usr/local/bin directory.
+After cloning this repo please change all the vaules that are relevant in `run.mac.sh`. You'll need to specify the install path of BASH-backup, the source location and destination.
 
 ```
-chmod 755 ~/backup.sh
-sudo ln -s ~/backup.sh /usr/local/bin/bash-backup
+ln -s ~/bash-backup/run.mac.sh ~/backup.sh /usr/local/bin/bash-backup
 ```
