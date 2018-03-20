@@ -1,6 +1,18 @@
+## Please configure the following!
+
 $install_path = "C:\path\to\bash_backup_cloned_from_github"
 $files_to_backup = "D:\path_to_the_files_youd_like_to_back_up"
 $backup_location = "E:\path_to_the_location_where_the_backup_will_be_stored"
+
+## DON'T EDIT BELOW THIS LINE
+
+$drive_exists = Test-Path "$install_path/README.md"
+
+if ($drive_exists -eq $false)
+{
+	Write-Host "Unable to locate the install path"
+	Exit
+}
 
 $drive_exists = Test-Path "$files_to_backup"
 
