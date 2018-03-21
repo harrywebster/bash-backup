@@ -1,0 +1,3 @@
+# Hide personal PGP keys from git - if this file exists then the app will
+# encrypt/decrypt the backup store (destination)
+/private.key
