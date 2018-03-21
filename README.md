@@ -53,6 +53,19 @@ snapshots directory in `$backup_location`.
 
 You can change the default **365 days** to retain backups by modifing the `./src/rsnapshot.conf`
 
+## Encryption
+
+Firstly we must create a GPG key, in Linux you can run the following after
+installing `apt-get install gnupg2`:
+
+```
+gpg2 --gen-key
+```
+
+This will output a file called...
+
+FIXME
+
 ## Built With
 
 * [Docker](https://www.docker.com/) - The app framework used
