@@ -55,16 +55,18 @@ You can change the default **365 days** to retain backups by modifing the `./src
 
 ## Encryption
 
-Firstly we must create a GPG key, in Linux you can run the following after
-installing `apt-get install gnupg2`:
+Create a password file called `password.txt` in the root of this repository
+containing your password then the app will automatically encrypt the output...
+it will also decrypt each time the backup is updated or restored.
 
 ```
-gpg2 --gen-key
+$ cat .\password.txt
+this_is_my_top_secret_password
 ```
 
-This will output a file called...
-
-FIXME
+To decrypt to restore the data simply create a file called `restore.txt`
+containing anything and once the backup has been updated it wont re-encrypt
+it.
 
 ## Built With
 
