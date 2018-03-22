@@ -1,10 +1,12 @@
 #!/bin/bash
 
-echo `date '+%Y-%m-%d %H:%M:%S'` : Starting to mirror contents of source
-echo
-rsync -avzu --delete --stats /backup/source /backup/destination/latest/
-echo
-echo `date '+%Y-%m-%d %H:%M:%S'` : Finish mirroring
+if [ ${SNAPSHOT_ONLY} = "false" ]; then
+	echo `date '+%Y-%m-%d %H:%M:%S'` : Starting to mirror contents of source
+	echo
+	rsync -avzu --delete --stats /backup/source /backup/destination/latest/
+	echo
+	echo `date '+%Y-%m-%d %H:%M:%S'` : Finish mirroring
+fi
 
 echo `date '+%Y-%m-%d %H:%M:%S'` : Starting snapshot saving differences
 rsnapshot -c /backup/rsnapshot.conf daily
