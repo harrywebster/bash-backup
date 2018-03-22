@@ -3,6 +3,7 @@
 $install_path = "D:\bash-backup"
 $files_to_backup = "C:\Users\Harry\Important-Files"
 $backup_location = "C:\Users\Harry\Desktop\backup"
+$snapshot_only = "false"
 
 ## DON'T EDIT BELOW THIS LINE
 
@@ -37,4 +38,4 @@ Write-Host "Build the latest version of BASH-backup"
 docker build -t bash_backup:latest ./
 
 Write-Host "Execute a backup run"
-docker run -h bash-backup --rm --mount type=bind,source="$files_to_backup,target=/backup/source" --mount type=bind,source="$backup_location,target=/backup/destination" bash_backup:latest
+docker run -h bash-backup --rm --env SNAPSHOT_ONLY=$snapshot_only --mount type=bind,source="$files_to_backup,target=/backup/source" --mount type=bind,source="$backup_location,target=/backup/destination" bash_backup:latest

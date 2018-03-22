@@ -5,6 +5,7 @@
 install_path=/Users/harry/bash-backup
 files_to_backup=/Users/harry/Dropbox/Invoices
 backup_location=/Users/harry/Desktop/backup
+snapshot_only=false
 
 ## DON'T EDIT BELOW THIS LINE
 
@@ -29,6 +30,7 @@ git pull
 docker build -t bash_backup:latest ./
 docker run \
 	--rm \
+        --env SNAPSHOT_ONLY=$snapshot_only \
 	--mount type=bind,source=$files_to_backup,target=/backup/source \
 	--mount type=bind,source=$backup_location,target=/backup/destination \
 	bash_backup:latest
